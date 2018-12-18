@@ -15,7 +15,8 @@ class App extends Component {
 
           {happy}
 
-          <Timer timezone="0" />
+          <Timer secs="1" timezone="0" />
+          <Timer secs="2" timezone="0" />
 
       </div>
     );
