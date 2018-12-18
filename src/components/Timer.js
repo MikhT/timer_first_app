@@ -15,7 +15,7 @@ import React from 'react'
         render() {
             const tempo = this.state.timestamp;
 
-            return <h2>Timer: {tempo} <button onClick={this.reset}>{ this.state.stopped ? "Avvia" : "Stop"}</button></h2>
+            return <h2>Timer (+{this.props.secs} secs): {tempo} <button onClick={this.reset}>{ this.state.stopped ? "Avvia" : "Stop"}</button></h2>
         }
 
         reset = () => {
@@ -35,7 +35,7 @@ import React from 'react'
 
             this.setState((precState) => {
                 return {
-                    timestamp : precState.timestamp + 1
+                    timestamp : parseFloat(precState.timestamp) + parseFloat(this.props.secs)
                 }
             })
 
